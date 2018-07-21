@@ -1,0 +1,7 @@
+{
+    "url": "https://playground.devicehive.com/api/rest",
+    "a_token": "eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjp7ImEiOlsyLDMsNCw1LDYsNyw4LDksMTAsMTEsMTIsMTUsMTYsMTddLCJlIjoxNTMyMTg3NDA4Njg4LCJ0IjoxLCJ1IjoyNzM1LCJuIjpbIjI3MDgiXSwiZHQiOlsiKiJdfX0.4KISY_NPVkeSA7v6pC6jWMfF2rHCR0CnuoGryszF2wk",
+    "r_token": "eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjp7ImEiOlsyLDMsNCw1LDYsNyw4LDksMTAsMTEsMTIsMTUsMTYsMTddLCJlIjoxNTMyMTg3NDA4Njg4LCJ0IjoxLCJ1IjoyNzM1LCJuIjpbIjI3MDgiXSwiZHQiOlsiKiJdfX0.4KISY_NPVkeSA7v6pC6jWMfF2rHCR0CnuoGryszF2wk",
+    "device_id": "video-analysis-demo",
+    "r_tokendevice_id": ""
+}
