@@ -358,7 +358,7 @@ function getDataBasedQuery($sql){
 
 //readCurrDataDb("2018-07-24T20:17:55.655");
 
-
+/*
 $count = 0;
 $currTime = '';
 while (true) {
@@ -377,6 +377,9 @@ while (true) {
 
 
 }
+*/
+
+
 
 
 
@@ -442,10 +445,25 @@ while (true) {
 
 ?>
 
+
 <html>
 <head>
     geogram
 </head>
 <body>
+<div id="dom-target" style="display: none;">
+    <?php
+    $testing = 0;
+    $testing = testHello();
+    echo htmlspecialchars($testing); /* You have to escape because the result
+                                           will not be valid HTML otherwise. */
+    ?>
+</div>
+<script>
+    var div = document.getElementById("dom-target");
+    var myData = div.textContent;
+    console.log(myData);
+</script>
+
 </body>
 </html>
