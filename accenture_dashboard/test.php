@@ -207,23 +207,105 @@ function readCurrDataDb($currTimeToUse){
     $pointsCam1 = ($numCam1Class1 * $pointsClass1) + ($numCam1Class2 * $pointsClass2);
     $pointsCam2 = ($numCam2Class1 * $pointsClass1) + ($numCam2Class2 * $pointsClass2);
 
-    //compare 2 stop light priority
-    if($pointsCam1 > $pointsCam2) {
-        echo "points cam1: " . $pointsCam1;
-        echo "points cam2: " . $pointsCam2;
-        echo nl2br("\n");
-        echo "green cam1";
 
-        //send data to arduino
-    }
-    else {
-        echo "points cam1: " . $pointsCam1;
-        echo "points cam2: " . $pointsCam2;
-        echo nl2br("\n");
-        echo "green cam2";
+    //chewy's code
 
-        //send data to arduino
-    }
+    //hardcoded low med high
+    $lowTraffic = 25;
+    $medTraffic = 50;
+    $highTraffic = 75;
+
+    //compute value per cam
+    $totalPoints = $pointsCam1 + $pointsCam2;
+
+    $cam1Percent = ($pointsCam1 / $totalPoints) * 100;
+    $cam2Percent = ($pointsCam2 / $totalPoints) * 100;
+
+
+    $finalVal1 = 0;
+    $finalVal2 = 0;
+
+    //0 = low
+    //1 = med
+    //2 = high
+
+    //get cam 1 finalval
+    if($cam1Percent <= $lowTraffic)
+        $finalVal1 = 0;
+    else if($cam1Percent <= $medTraffic)
+        $finalVal1 = 1;
+    else
+        $finalVal1 = 2;
+
+
+    //get cam 2 finalval
+    if($cam2Percent <= $lowTraffic)
+        $finalVal2 = 0;
+    else if($cam2Percent <= $medTraffic)
+        $finalVal2 = 1;
+    else
+        $finalVal2 = 2;
+
+
+
+    /*
+    0 + 0 = 0
+    1 + 0 = 1
+    2 + 0 = 2
+
+    0 + 1 = 0
+    1 + 1 = 1
+    2 + 1 = 2
+
+    0 + 2 = 0
+    1 + 2 = 1
+    2 + 2 = 2
+    */
+
+
+    $ret1 = 0;
+    $ret2 = 0;
+    //Get first returning val
+    if($finalVal1 == 0 && $finalVal2 == 0)
+        $ret1 = 0;
+    else if($finalVal1 == 1 && $finalVal2 == 1)
+        $ret1 = 1;
+    else if($finalVal1 == 2 && $finalVal2 == 2)
+        $ret1 = 2;
+    else if($finalVal1 == 0 && $finalVal2 == 0)
+        $ret1 = 0;
+    else if($finalVal1 == 1 && $finalVal2 == 1)
+        $ret1 = 1;
+    else if($finalVal1 == 2 && $finalVal2 == 2)
+        $ret1 = 2;
+    else if($finalVal1 == 0 && $finalVal2 == 0)
+        $ret1 = 0;
+    else if($finalVal1 == 1 && $finalVal2 == 1)
+        $ret1 = 1;
+    else if($finalVal1 == 2 && $finalVal2 == 2)
+        $ret1 = 2;
+
+    //Get second returning val
+    if($finalVal2 == 0 && $finalVal1 == 0)
+        $ret1 = 0;
+    else if($finalVal2 == 1 && $finalVal1 == 1)
+        $ret1 = 1;
+    else if($finalVal2 == 2 && $finalVal1 == 2)
+        $ret1 = 2;
+    else if($finalVal2 == 0 && $finalVal1 == 0)
+        $ret1 = 0;
+    else if($finalVal2 == 1 && $finalVal1 == 1)
+        $ret1 = 1;
+    else if($finalVal2 == 2 && $finalVal1 == 2)
+        $ret1 = 2;
+    else if($finalVal2 == 0 && $finalVal1 == 0)
+        $ret1 = 0;
+    else if($finalVal2 == 1 && $finalVal1 == 1)
+        $ret1 = 1;
+    else if($finalVal2 == 2 && $finalVal1 == 2)
+        $ret1 = 2;
+
+
 
 }
 
