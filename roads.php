@@ -77,12 +77,12 @@ function getDataServer(){
 
             //write to db
             writeDataDb(substr($i[0], 14, strlen($i[0]) - 2),
-                        substr($i[1], 9, strlen($i[1]) - 1),
-                        $deviceId,
-                        $networkId,
-                        $deviceTypeId,
-                        $timestamp,
-                        $retrievalId);
+                substr($i[1], 9, strlen($i[1]) - 1),
+                $deviceId,
+                $networkId,
+                $deviceTypeId,
+                $timestamp,
+                $retrievalId);
 
         }
     }
@@ -268,19 +268,19 @@ function readCurrDataDb($currTimeToUse){
     //Get first returning val
     if($finalVal1 == 0 && $finalVal2 == 0)
         $ret1 = 0;
-    else if($finalVal1 == 1 && $finalVal2 == 0)
+    else if($finalVal1 == 1 && $finalVal2 == 1)
         $ret1 = 1;
-    else if($finalVal1 == 2 && $finalVal2 == 0)
+    else if($finalVal1 == 2 && $finalVal2 == 2)
         $ret1 = 2;
-    else if($finalVal1 == 0 && $finalVal2 == 1)
+    else if($finalVal1 == 0 && $finalVal2 == 0)
         $ret1 = 0;
     else if($finalVal1 == 1 && $finalVal2 == 1)
         $ret1 = 1;
-    else if($finalVal1 == 2 && $finalVal2 == 1)
+    else if($finalVal1 == 2 && $finalVal2 == 2)
         $ret1 = 2;
-    else if($finalVal1 == 0 && $finalVal2 == 2)
+    else if($finalVal1 == 0 && $finalVal2 == 0)
         $ret1 = 0;
-    else if($finalVal1 == 1 && $finalVal2 == 2)
+    else if($finalVal1 == 1 && $finalVal2 == 1)
         $ret1 = 1;
     else if($finalVal1 == 2 && $finalVal2 == 2)
         $ret1 = 2;
@@ -288,19 +288,19 @@ function readCurrDataDb($currTimeToUse){
     //Get second returning val
     if($finalVal2 == 0 && $finalVal1 == 0)
         $ret1 = 0;
-    else if($finalVal2 == 1 && $finalVal1 == 0)
+    else if($finalVal2 == 1 && $finalVal1 == 1)
         $ret1 = 1;
-    else if($finalVal2 == 2 && $finalVal1 == 0)
+    else if($finalVal2 == 2 && $finalVal1 == 2)
         $ret1 = 2;
-    else if($finalVal2 == 0 && $finalVal1 == 1)
+    else if($finalVal2 == 0 && $finalVal1 == 0)
         $ret1 = 0;
     else if($finalVal2 == 1 && $finalVal1 == 1)
         $ret1 = 1;
-    else if($finalVal2 == 2 && $finalVal1 == 1)
+    else if($finalVal2 == 2 && $finalVal1 == 2)
         $ret1 = 2;
-    else if($finalVal2 == 0 && $finalVal1 == 2)
+    else if($finalVal2 == 0 && $finalVal1 == 0)
         $ret1 = 0;
-    else if($finalVal2 == 1 && $finalVal1 == 2)
+    else if($finalVal2 == 1 && $finalVal1 == 1)
         $ret1 = 1;
     else if($finalVal2 == 2 && $finalVal1 == 2)
         $ret1 = 2;
@@ -473,9 +473,8 @@ while (true) {
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>MMDA Traffic Light Dashboard</title>
+    <title>MMDA Traffic Light Roads</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -492,8 +491,7 @@ while (true) {
     <!-- Animation Css -->
     <link href="plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- Morris Chart Css-->
-    <link href="plugins/morrisjs/morris.css" rel="stylesheet" />
+
 
     <!-- Custom Css -->
     <link href="css/style.css" rel="stylesheet">
@@ -502,13 +500,7 @@ while (true) {
     <link href="css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<style>
-
-    #white{
-        color:white;
-    }
-</style>
-<body class="theme-red">
+<body class="theme-red ls-opened">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
@@ -529,8 +521,6 @@ while (true) {
 <!-- Overlay For Sidebars -->
 <div class="overlay"></div>
 <!-- #END# Overlay For Sidebars -->
-<!-- Search Bar -->
-<!-- #END# Search Bar -->
 <!-- Top Bar -->
 <nav class="navbar">
     <div class="container-fluid">
@@ -541,6 +531,7 @@ while (true) {
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+
                 <!-- Notifications -->
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
@@ -557,9 +548,87 @@ while (true) {
                                             <i class="material-icons">person_add</i>
                                         </div>
                                         <div class="menu-info">
-                                            <h4>ADD NOTIFCATION HERE</h4>
+                                            <h4>12 new members joined</h4>
                                             <p>
                                                 <i class="material-icons">access_time</i> 14 mins ago
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="icon-circle bg-cyan">
+                                            <i class="material-icons">add_shopping_cart</i>
+                                        </div>
+                                        <div class="menu-info">
+                                            <h4>4 sales made</h4>
+                                            <p>
+                                                <i class="material-icons">access_time</i> 22 mins ago
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="icon-circle bg-red">
+                                            <i class="material-icons">delete_forever</i>
+                                        </div>
+                                        <div class="menu-info">
+                                            <h4><b>Nancy Doe</b> deleted account</h4>
+                                            <p>
+                                                <i class="material-icons">access_time</i> 3 hours ago
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="icon-circle bg-orange">
+                                            <i class="material-icons">mode_edit</i>
+                                        </div>
+                                        <div class="menu-info">
+                                            <h4><b>Nancy</b> changed name</h4>
+                                            <p>
+                                                <i class="material-icons">access_time</i> 2 hours ago
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="icon-circle bg-blue-grey">
+                                            <i class="material-icons">comment</i>
+                                        </div>
+                                        <div class="menu-info">
+                                            <h4><b>John</b> commented your post</h4>
+                                            <p>
+                                                <i class="material-icons">access_time</i> 4 hours ago
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="icon-circle bg-light-green">
+                                            <i class="material-icons">cached</i>
+                                        </div>
+                                        <div class="menu-info">
+                                            <h4><b>John</b> updated status</h4>
+                                            <p>
+                                                <i class="material-icons">access_time</i> 3 hours ago
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="icon-circle bg-purple">
+                                            <i class="material-icons">settings</i>
+                                        </div>
+                                        <div class="menu-info">
+                                            <h4>Settings updated</h4>
+                                            <p>
+                                                <i class="material-icons">access_time</i> Yesterday
                                             </p>
                                         </div>
                                     </a>
@@ -605,15 +674,14 @@ while (true) {
         <!-- Menu -->
         <div class="menu">
             <ul class="list">
-                <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
+                <li>
                     <a href="test.php">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
                 </li>
-                <li>
-                    <a href="roads.html">
+                <li class="active">
+                    <a href="roads.php">
                         <i class="material-icons">traffic</i>
                         <span>Roads</span>
                     </a>
@@ -624,7 +692,7 @@ while (true) {
         <!-- Footer -->
         <div class="legal">
             <div class="copyright">
-                &copy; 2017 - 2018 <a href="javascript:void(0);">MMDA Traffic Light Dashboard</a>.
+                &copy; 2016 - 2017 <a href="javascript:void(0);">MMDA Traffic Light Dashboard</a>.
             </div>
             <div class="version">
                 <b>Version: </b> 1.0.5
@@ -692,53 +760,64 @@ while (true) {
 
 <section class="content">
     <div class="container-fluid">
+        <!-- Hover Zoom Effect -->
         <div class="block-header">
-            <h2>DASHBOARD</h2>
+            <h2>ROAD TRAFFIC STATUS</h2>
         </div>
-
-
-        <!-- CPU Usage -->
-        <div class="row clearfix">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="card">
-                    <div class="header">
-                        <div class="row clearfix">
-                            <div class="col-xs-12 col-sm-6">
-                                <h2>CURRENT TRAFFIC LOAD</h2>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 align-right">
-                                <div class="switch panel-switch-btn">
-                                    <span class="m-r-10 font-12">REAL TIME</span>
-                                    <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="header-dropdown m-r--5">
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box-4 hover-zoom-effect">
+                    <div class="icon">
+                        <i class="material-icons col-pink">directions_car</i>
                     </div>
-                    <div class="body">
-                        <div id="real_time_chart" class="dashboard-flot-chart"></div>
+                    <div class="content">
+                        <div class="text">ROAD 1</div>
+                        <div class="number">2 <small>CARS</small></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box-4 hover-zoom-effect">
+                    <div class="icon">
+                        <i class="material-icons col-orange">directions_car</i>
+                    </div>
+                    <div class="content">
+                        <div class="text">ROAD 2</div>
+                        <div class="number">4 <small>CARS</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box-4 hover-zoom-effect">
+                    <div class="icon">
+                        <i class="material-icons col-light-blue">directions_car</i>
+                    </div>
+                    <div class="content">
+                        <div class="text">ROAD 3</div>
+                        <div class="number">11 <small>CARS</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box-4 hover-zoom-effect">
+                    <div class="icon">
+                        <i class="material-icons col-cyan">directions_car</i>
+                    </div>
+                    <div class="content">
+                        <div class="text">ROAD 4</div>
+                        <div class="number">13  <small>CARS</small></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# CPU Usage -->
-
-        <!-- Visitors -->
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+        <!-- #END# Hover Zoom Effect -->
+        <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" >
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" >
             <div class="card">
                 <div class="header">
-                    <h2 class=>AVERAGE TRAFFIC</h2>
+                    <h2 class=>AVERAGE TRAFFIC (ROAD 1)</h2>
                     <ul class="header-dropdown m-r--5">
                         <li class="dropdown" >
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -778,36 +857,9 @@ while (true) {
                 </div>
             </div>
         </div>
-        <!-- #END# Visitors  -->
-        <!-- Browser Usage -->
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="card">
-                <div class="header">
-                    <h2>BROWSER USAGE</h2>
-                    <ul class="header-dropdown m-r--5">
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li><a href="javascript:void(0);">Action</a></li>
-                                <li><a href="javascript:void(0);">Another action</a></li>
-                                <li><a href="javascript:void(0);">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="body">
-                    <div id="donut_chart" class="dashboard-donut-chart"></div>
-                </div>
-            </div>
-        </div>
-        <!-- #END# Browser Usage -->
-    </div>
     </div>
 </section>
 
-<!-- Jquery Core Js -->
 <script src="plugins/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core Js -->
@@ -822,32 +874,14 @@ while (true) {
 <!-- Waves Effect Plugin Js -->
 <script src="plugins/node-waves/waves.js"></script>
 
-<!-- Jquery CountTo Plugin Js -->
-<script src="plugins/jquery-countto/jquery.countTo.js"></script>
-
-<!-- Morris Plugin Js -->
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/morrisjs/morris.js"></script>
-
-<!-- ChartJs -->
-<script src="plugins/chartjs/Chart.bundle.js"></script>
-
-<!-- Flot Charts Plugin Js -->
-<script src="plugins/flot-charts/jquery.flot.js"></script>
-<script src="plugins/flot-charts/jquery.flot.resize.js"></script>
-<script src="plugins/flot-charts/jquery.flot.pie.js"></script>
-<script src="plugins/flot-charts/jquery.flot.categories.js"></script>
-<script src="plugins/flot-charts/jquery.flot.time.js"></script>
-
-<!-- Sparkline Chart Plugin Js -->
+<!-- Sparkline Plugin Js -->
 <script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
 <!-- Custom Js -->
 <script src="js/admin.js"></script>
-<script src="js/pages/index.js"></script>
+<script src="js/pages/charts/sparkline.js"></script>
 
 <!-- Demo Js -->
 <script src="js/demo.js"></script>
 </body>
-
 </html>
