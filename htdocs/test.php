@@ -160,6 +160,17 @@ function readDataDb(){
 }
 
 
+
+function getTotalNumClassType($class_name){
+    //get content
+    $sql = "SELECT * FROM camera_output WHERE class_name LIKE '" . $class_name . "'";
+
+    return getDataBasedQuery($sql);
+}
+
+
+
+
 function readCurrDataDb($currTimeToUse){
 
     //deviceId
@@ -356,40 +367,7 @@ function getDataBasedQuery($sql){
 }
 
 
-//readCurrDataDb("2018-07-24T20:17:55.655");
-
-/*
-$count = 0;
-$currTime = '';
-while (true) {
-    //retrieve data every second from server
-    getDataServer();
-
-    echo 'got data';
-
-    if($count %4==0){
-        readCurrDataDb($currTime);
-    }
-
-    sleep(1);
-
-    $count++;
-
-
-}
-*/
-
-
-
-
-
-
-
-
-
-
-/*
-
+function getDataBasedQueryArray($sql){
     $db_host = '127.0.0.1'; // Server Name
     $db_user = 'root'; // Username
     $db_pass = 'root'; // Password
@@ -401,21 +379,6 @@ while (true) {
         die ('Failed to connect to MySQL: ' . mysqli_connect_error());
     }
 
-    //insert content
-    $sqlAdd = "INSERT INTO camera_output (class_name, score, deviceId, networkId, deviceTypeId, timestamp, retrievalId)
-    VALUES ('test2', 0.3, 'devId2', 1, 1, 'time2', 1)";
-
-    $result = mysqli_query($conn, $sqlAdd);
-
-    if (!$result) {
-        die ('SQL Error: ' . mysqli_error($conn));
-    }
-
-
-
-    //get content
-    $sql = 'SELECT * FROM camera_output';
-
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {
@@ -425,6 +388,8 @@ while (true) {
 
     //display content
     $result = $conn->query($sql);
+
+    //uncomment to see content
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -439,34 +404,60 @@ while (true) {
     } else {
         echo "0 results";
     }
+
+
+
     $conn->close();
 
+    return $result;
+}
+
+function testHello(){
+    return 11230;
+}
+
+
+//readCurrDataDb("2018-07-24T20:17:55.655");
+
+
+
+//UI components
+//Pie chart
+$currNumCar = 0;
+$currNumTruck = 0;
+
+
+$count = 0;
+$currTime = '';
+$class_name_car = "bottle";
+$class_name_truck = "cup";
+
+
+//while (true) {
+//retrieve data every second from server
+/*
+getDataServer();
+
+echo 'got data';
+
+if($count %4==0){
+    readCurrDataDb($currTime);
+}
 */
 
+
+//getTotal num car
+$currNumCar = getTotalNumClassType($class_name_car);
+$currNumTruck = getTotalNumClassType($class_name_truck);
+
+//    sleep(1);
+//
+//    $count++;
+//
+//
+//}
+
 ?>
-
-
-<!--<html>
-<head>
-    geogram
-</head>
-<body>
-<div id="dom-target" style="display: none;">
-    //php tag
-/*    $testing = 0;
-    $testing = testHello();
-    echo htmlspecialchars($testing); /* You have to escape because the result
-                                           will not be valid HTML otherwise. */
-    */?>
-</div>
-<script>
-    var div = document.getElementById("dom-target");
-    var myData = div.textContent;
-    console.log(myData);
-</script>
-
-</body>
-</html>-->
 
 <!DOCTYPE html>
 <html>
@@ -500,6 +491,17 @@ while (true) {
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <style>
@@ -509,6 +511,30 @@ while (true) {
     }
 </style>
 <body class="theme-red">
+
+
+<!--TEST-->
+
+<div id="dom-target" style="display: none;">
+    <?php
+    $output = 42;
+    echo htmlspecialchars($output);
+    ?>
+</div>
+
+
+
+
+
+<!--END OF TEST-->
+
+
+
+
+
+
+
+
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
@@ -848,7 +874,29 @@ while (true) {
 
 <!-- Demo Js -->
 <script src="js/demo.js"></script>
-<script src="js/morris.js"></script>
+<!--<script src="js/charts.js"></script>-->
+
+
+<script type="text/javascript">var currNumCar = "<?= $currNumCar ?>";</script>
+<script type="text/javascript">var currNumTruck = "<?= $currNumTruck ?>";</script>
+
+<script type="text/javascript" src="js/charts.js"></script>
+
+
+<!--TEST-->
+
+
+
+<script>
+    var div = document.getElementById("dom-target");
+    var myData = div.textContent;
+    console.log("heh: " + myData);
+</script>
+
+
+
+
+<!--END OF TEST -->
 
 </body>
 

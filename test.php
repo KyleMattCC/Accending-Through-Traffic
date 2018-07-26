@@ -848,7 +848,7 @@ while (true) {
 
 <!-- Demo Js -->
 <script src="js/demo.js"></script>
-<script src="js/morris.js"></script>
+<script src="js/charts.js"></script>
 
 </body>
 
