@@ -69,11 +69,14 @@ function initSparkline() {
 }
 
 function initDonutChart() {
+    var perNumCar = (parseInt(currNumCar)/(parseInt(currNumCar) + parseInt(currNumTruck))) * 100;
+    var perNumTruck = (parseInt(currNumTruck)/(parseInt(currNumCar) + parseInt(currNumTruck))) * 100;
+
     Morris.Donut({
         element: 'carPieChart',
 		  data: [
-		    {label: "Car", value: 10},
-		    {label: "Truck", value: 15}
+		    {label: "Car", value: perNumCar.toFixed(2)},
+		    {label: "Truck", value: perNumTruck.toFixed(2)}
 		  ],
         colors: ['rgb(0, 188, 212)', 'rgb(255, 152, 0)'],
         formatter: function (y) {
