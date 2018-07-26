@@ -268,19 +268,19 @@ function readCurrDataDb($currTimeToUse){
     //Get first returning val
     if($finalVal1 == 0 && $finalVal2 == 0)
         $ret1 = 0;
-    else if($finalVal1 == 1 && $finalVal2 == 1)
+    else if($finalVal1 == 1 && $finalVal2 == 0)
         $ret1 = 1;
-    else if($finalVal1 == 2 && $finalVal2 == 2)
+    else if($finalVal1 == 2 && $finalVal2 == 0)
         $ret1 = 2;
-    else if($finalVal1 == 0 && $finalVal2 == 0)
+    else if($finalVal1 == 0 && $finalVal2 == 1)
         $ret1 = 0;
     else if($finalVal1 == 1 && $finalVal2 == 1)
         $ret1 = 1;
-    else if($finalVal1 == 2 && $finalVal2 == 2)
+    else if($finalVal1 == 2 && $finalVal2 == 1)
         $ret1 = 2;
-    else if($finalVal1 == 0 && $finalVal2 == 0)
+    else if($finalVal1 == 0 && $finalVal2 == 2)
         $ret1 = 0;
-    else if($finalVal1 == 1 && $finalVal2 == 1)
+    else if($finalVal1 == 1 && $finalVal2 == 2)
         $ret1 = 1;
     else if($finalVal1 == 2 && $finalVal2 == 2)
         $ret1 = 2;
@@ -288,19 +288,19 @@ function readCurrDataDb($currTimeToUse){
     //Get second returning val
     if($finalVal2 == 0 && $finalVal1 == 0)
         $ret1 = 0;
-    else if($finalVal2 == 1 && $finalVal1 == 1)
+    else if($finalVal2 == 1 && $finalVal1 == 0)
         $ret1 = 1;
-    else if($finalVal2 == 2 && $finalVal1 == 2)
+    else if($finalVal2 == 2 && $finalVal1 == 0)
         $ret1 = 2;
-    else if($finalVal2 == 0 && $finalVal1 == 0)
+    else if($finalVal2 == 0 && $finalVal1 == 1)
         $ret1 = 0;
     else if($finalVal2 == 1 && $finalVal1 == 1)
         $ret1 = 1;
-    else if($finalVal2 == 2 && $finalVal1 == 2)
+    else if($finalVal2 == 2 && $finalVal1 == 1)
         $ret1 = 2;
-    else if($finalVal2 == 0 && $finalVal1 == 0)
+    else if($finalVal2 == 0 && $finalVal1 == 2)
         $ret1 = 0;
-    else if($finalVal2 == 1 && $finalVal1 == 1)
+    else if($finalVal2 == 1 && $finalVal1 == 2)
         $ret1 = 1;
     else if($finalVal2 == 2 && $finalVal1 == 2)
         $ret1 = 2;
