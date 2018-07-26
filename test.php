@@ -77,12 +77,12 @@ function getDataServer(){
 
             //write to db
             writeDataDb(substr($i[0], 14, strlen($i[0]) - 2),
-                        substr($i[1], 9, strlen($i[1]) - 1),
-                        $deviceId,
-                        $networkId,
-                        $deviceTypeId,
-                        $timestamp,
-                        $retrievalId);
+                substr($i[1], 9, strlen($i[1]) - 1),
+                $deviceId,
+                $networkId,
+                $deviceTypeId,
+                $timestamp,
+                $retrievalId);
 
         }
     }
@@ -613,7 +613,7 @@ while (true) {
                     </a>
                 </li>
                 <li>
-                    <a href="roads.html">
+                    <a href="roads.php">
                         <i class="material-icons">traffic</i>
                         <span>Roads</span>
                     </a>
