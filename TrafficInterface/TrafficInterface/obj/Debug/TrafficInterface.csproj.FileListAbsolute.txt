@@ -1,0 +1,10 @@
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\bin\Debug\TrafficInterface.exe.config
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\bin\Debug\TrafficInterface.exe
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\bin\Debug\TrafficInterface.pdb
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\obj\Debug\TrafficInterface.csprojAssemblyReference.cache
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\obj\Debug\TrafficInterface.csproj.CoreCompileInputs.cache
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\obj\Debug\TrafficInterface.exe
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\obj\Debug\TrafficInterface.pdb
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Janz Aeinstein\source\repos\TrafficInterface\TrafficInterface\obj\Debug\TrafficInterface.csproj.CopyComplete
